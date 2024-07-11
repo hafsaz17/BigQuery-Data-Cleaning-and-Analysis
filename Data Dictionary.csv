@@ -1,0 +1,26 @@
+Table:,order_details,
+Column Name,Data Type,Description
+order_details_id,INT,Unique identifier for each pizza placed within each order
+order_id,INT,Foreign key that ties the details in each order to the order itself
+pizza_id,STRING,"Foreign key that ties the pizza ordered to its details, like size and price"
+quantity,INT,Quantity of the pizza ordered of the same type and size
+,,
+Table:,orders,
+Column Name,Data Type,Description
+order_id,INT,Unique identifier for each order
+date,DATE,Date of the order
+time,TIME,Time of the order
+,,
+Table:,pizza_types,
+Column Name,Data Type,Description
+pizza_type_id,STRING,Unique identifier for each pizza type
+name,TEXT,Name of the pizza type
+category,TEXT,Category of the pizza type
+ingredients,TEXT,Ingredients of the pizza type
+,,
+Table:,pizzas,
+Column Name,Data Type,Description
+pizza_id,STRING,Unique identifier for each pizza
+pizza_type_id,STRING,Foreign key that ties each pizza to its broader pizza type
+size,VARCHAR,"Size of the pizza (Small, Medium, Large, X Large, or XX Large)"
+price,FLOAT,Price of the pizza in USD
